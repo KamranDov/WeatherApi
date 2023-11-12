@@ -1,0 +1,28 @@
+#spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#spring.datasource.url=jdbc:mysql://localhost:3306/weather
+#spring.datasource.username=root
+#spring.datasource.password=123456789root
+#spring.jpa.show-sql=true
+#spring.jpa.hibernate.ddl-auto=update
+#spring.jpa.properties.hibernate.format_sql=true
+#spring.security.jwt.secret=Zu9w8qJ3zZf2xG5vB7rM9tN4pC6eV1yS3c4Ld32kI00
+##jwt.expiration=3600000
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/weather
+    username: root
+    password: 123456789root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+security:
+  jwt:
+    secret: "Zu9w8qJ3zZf2xG5vB7rM9tN4pC6eV1yS3c4Ld32kI00"
