@@ -3,6 +3,7 @@ package com.growlab.weatherapi.controller;
 
 import com.growlab.weatherapi.dto.WeatherDto.WeatherDTO;
 import com.growlab.weatherapi.service.WeatherService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -18,7 +19,7 @@ public class WeatherAPI {
 
     @GetMapping("/{city}")
     @ResponseStatus(HttpStatus.CREATED)
-    WeatherDTO getWeather(@PathVariable("city") String city){
+    public WeatherDTO getWeather(@Valid @PathVariable("city") String city){
         return weatherService.getWeatherByCityName(city);
     }
 }

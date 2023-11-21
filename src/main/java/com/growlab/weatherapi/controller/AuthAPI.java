@@ -4,6 +4,7 @@ import com.growlab.weatherapi.dto.userDto.AuthenticationRequest;
 import com.growlab.weatherapi.dto.userDto.AuthenticationResponse;
 import com.growlab.weatherapi.dto.userDto.UserDto;
 import com.growlab.weatherapi.service.UserService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -17,13 +18,13 @@ public class AuthAPI {
 
     @PostMapping("/sign-in")
     @ResponseStatus(HttpStatus.OK)
-    public AuthenticationResponse login(@RequestBody AuthenticationRequest authenticationRequest) {
+    public AuthenticationResponse login(@Valid @RequestBody AuthenticationRequest authenticationRequest) {
         return userService.loginUser(authenticationRequest);
     }
 
     @PostMapping("/sign-up")
     @ResponseStatus(HttpStatus.CREATED)
-    public AuthenticationResponse register(@RequestBody UserDto userDto) {
+    public AuthenticationResponse register(@Valid @RequestBody UserDto userDto) {
         return userService.registerUser(userDto);
     }
 
