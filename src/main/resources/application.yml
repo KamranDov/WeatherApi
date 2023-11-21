@@ -11,9 +11,9 @@
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/weather
-    username: root
-    password: 123456789root
+    url: jdbc:mysql://localhost:3306/
+    username:
+    password:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
